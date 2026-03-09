@@ -17,10 +17,10 @@ const AdminDashboardComponent = {
                 ]);
                 this.stats = statsRes.data;
                 this.analytics = analyticsRes.data;
+                this.loading = false;
                 this.$nextTick(() => this.renderCharts());
             } catch (err) {
                 showToast('Failed to load dashboard', 'error');
-            } finally {
                 this.loading = false;
             }
         },
